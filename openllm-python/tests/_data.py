@@ -74,5 +74,5 @@ def prepare_sharegpt_request(
     )
     .filter(filter_length, batched=True)
     .shuffle(seed=42)
-    .to_list()
+    .to_list()[:num_requests]
   )
